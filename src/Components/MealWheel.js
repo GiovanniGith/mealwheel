@@ -4,6 +4,14 @@ import { ApplicationViews } from "./ApplicationViews";
 import { Login } from "./Auth/Login";
 import { Register } from "./Auth/Register";
 import "./MealWheel.css";
+import { FootNav } from "./Footer/FooterNavBar";
+
+export var MealWheelLogo = (
+  <div >
+    <img src="./Images/MealWheelLogo.jpg"/> 
+    <img className="App-logo" src="./Images/MealWheel.png" />    
+  </div>
+);
 
 export const App = () => (
   <>
@@ -12,8 +20,9 @@ export const App = () => (
         if (localStorage.getItem("MealWheel_User")) {
           return (
             <>
-              {/* <NavBar />
-              <ApplicationViews /> */}
+              {MealWheelLogo}
+              <ApplicationViews />
+              <FootNav />
             </>
           );
         } else {

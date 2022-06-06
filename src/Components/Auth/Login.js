@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import "./Login.css"
+import { MealWheelLogo } from "../MealWheel"
 
 
 export const Login = () => {
@@ -36,6 +37,7 @@ export const Login = () => {
             </dialog>
 
             <section>
+                ${MealWheelLogo}
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Welcome to the The Meal Wheel!!</h1>
                     <h2>Please sign in</h2>
