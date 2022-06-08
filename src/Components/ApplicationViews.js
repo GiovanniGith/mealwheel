@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import { Favorites} from "./Favorites/Favorites"
 import { CuisineChoice } from "./WheelSpin/FilteredCuisines";
 import { ProteinChoice } from "./WheelSpin/FilteredProteins"
+import { IntolerenceChoice } from "./WheelSpin/FilteredIntolerences";
 import "./MealWheel.css"
 
 
@@ -21,19 +22,19 @@ export const ApplicationViews = () => {
           <ProteinChoice/>
         </Route>
         <Route path="/Intolerences">
-          <CuisineChoice/>
+          <IntolerenceChoice/>
         </Route>
-        {/* <Route path="/Favorites">
-          <Favorites />
+        {/* <Route path="/SpinTheWheel">
+          <SpinTheWheel />
         </Route> 
-        <Route path="/WheelSpin">
-          <SpinTheWheel/>
+        <Route path="/SpinResults">
+          <SpinResults/>
         </Route>
-        <Route path="/WheelSpin">
-          <SpinTheWheel/>
+        <Route path="/RecipeIngredients">
+          <RecipeIngredients/>
         </Route>
-        <Route path="/WheelSpin">
-          <SpinTheWheel/>
+        <Route path="/RecipeInstructions">
+          <RecipeInstructions/>
         </Route> */}
 
 

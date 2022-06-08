@@ -33,9 +33,14 @@
   border-radius: 8px;
 }
 
+.MealWheelLogo {
+  width: 45%;
+}
+
 .App-logo {
-  
-  height: 30vmin;
+  position: relative;
+  top:relative 10%;
+  height: 25vmin;
   pointer-events: none;
 }
 
