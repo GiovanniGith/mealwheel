@@ -1,13 +1,20 @@
 .navbar {
+    position: fixed;
+    bottom: 5%;
+    right: 0;
+    width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    
+
         
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
-    bottom: 30px;
+    padding: 20px;
+    background-color:rgb(87, 120, 168);
 
 }

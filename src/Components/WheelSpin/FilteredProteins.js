@@ -1,21 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export const FilteredProteinList = () => {
-  const [filteredProtein, setFilteredProtein] = useState([]);
- 
-  const ProteinType = 
+export const ProteinChoice = () => {
+  const [protein, setProtein] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.spoonacular.com/recipes/complexSearch?cuisine=${ProteinType}")
+    fetch("http://localhost:8088/protein")
       .then((res) => res.json())
       .then((data) => {
-        setFilteredProtein(data);
+        setProtein(data);
       });
   }, []);
 
+
   return (
-    <>
-     
+    <><div className="content">
+      <h1>Pick your Main Protein</h1>
+
+      <div className="buttonOp">
+        {protein.map((protein) => {
+          return <button key={`protein--${protein.id}`}>{protein.type}</button>;
+        })}
+      </div>
+      </div>
     </>
   );
 };

@@ -2,6 +2,37 @@
   text-align: center;
 }
 
+.content{
+  
+ text-align: center;
+  
+}
+
+.buttonOp {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.cuisineButton {
+  background-color: darkgreen;
+  text-decoration: underline;
+  flex-basis: 10%;
+  padding: 10px 20px;
+  margin: .5%;
+  border-radius: 8px;
+}
+
+.seeAllButton {
+  background-color: red;
+  text-decoration: underline;
+  flex-basis: 10%;
+  padding: 10px 20px;
+  margin: .5%;
+  border-radius: 8px;
+}
+
 .App-logo {
   
   height: 30vmin;
@@ -10,7 +41,8 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 10s linear;
+    animation: App-logo-spin infinite  10s linear;
+    
   }
 }
 
