@@ -1,14 +1,21 @@
-import React   from "react";
-import { Route } from "react-router-dom";
+import React, {useState}  from "react";
+import { Route} from "react-router-dom";
 import { Favorites} from "./Favorites/Favorites"
-import { CuisineChoice } from "./WheelSpin/FilteredCuisines";
-import { ProteinChoice } from "./WheelSpin/FilteredProteins"
-import { IntolerenceChoice } from "./WheelSpin/FilteredIntolerences";
+import { CuisineChoice } from "./SpinTheWheel/FilteredCuisines";
+import { ProteinChoice } from "./SpinTheWheel/FilteredProteins"
+import { IntolerenceChoice } from "./SpinTheWheel/FilteredIntolerences";
+import { SpinTheWheel } from "./SpinTheWheel/SpinTheWheel";
 import "./MealWheel.css"
 
 
 
 export const ApplicationViews = () => {
+  const [chosenCuisine, setChosenCuisine] = useState ({test:"test"})
+  
+
+
+
+
   return (
     <>
       <div>
@@ -16,18 +23,21 @@ export const ApplicationViews = () => {
           <Favorites />
         </Route> 
         <Route path="/CuisineChoice">
-          <CuisineChoice/>
+          <CuisineChoice setChosenCuisine={setChosenCuisine}/>
         </Route>
         <Route path="/ProteinChoice">
-          <ProteinChoice/>
+          <ProteinChoice setChosenProtein={setChosenCuisine}  />
         </Route>
         <Route path="/Intolerences">
-          <IntolerenceChoice/>
+          <IntolerenceChoice  setChosenIntolerence={setChosenCuisine} />
         </Route>
-        {/* <Route path="/SpinTheWheel">
-          <SpinTheWheel />
+        <Route path="/SpinTheWheel">
+          <SpinTheWheel chosenCuisine={chosenCuisine} />
         </Route> 
         <Route path="/SpinResults">
+          <SpinResults />
+        </Route> 
+        {/* <Route path="/SpinResults">
           <SpinResults/>
         </Route>
         <Route path="/RecipeIngredients">

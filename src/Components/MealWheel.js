@@ -9,7 +9,7 @@ import { FootNav } from "./Footer/FooterNavBar";
 export var MealWheelLogo = (
   <div >
     <img className="MealWheelLogo" src="./Images/MealWheelLogo.jpg"/> 
-    <img className="App-logo" src="./Images/MealWheel.png" />    
+    <img className="App-logo" src="./Images/Wheel.jpg" />    
   </div>
 );
 

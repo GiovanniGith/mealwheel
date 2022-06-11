@@ -15,7 +15,7 @@
 
 }
 
-.cuisineButton {
+.spinOptionButton {
   background-color: darkgreen;
   text-decoration: underline;
   flex-basis: 10%;
@@ -34,18 +34,29 @@
 }
 
 .MealWheelLogo {
-  width: 45%;
+  width: 25%;
 }
 
 .App-logo {
   position: relative;
-  top:relative 10%;
-  height: 25vmin;
+  bottom: 250px;
+  left: -120px;
+  width: 60px;
   pointer-events: none;
+  
+}
+
+.Spin-the-Wheel {
+  position:absolute;
+  top: 10%; 
+  align-content: center;
+  width: 1,000px;
+  
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .Spin-the-Wheel {
     animation: App-logo-spin infinite  10s linear;
     
   }
