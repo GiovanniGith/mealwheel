@@ -1,28 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { MealWheelLogo } from "../MealWheel";
+import { Link } from "react-router-dom";
 
+export const SpinTheWheel = ({ chosenCuisine }) => {
 
-export const SpinTheWheel = ({chosenCuisine}) => {
-  const [options, setOptions] = useState()
-
- 
-  const MealWheelLogo = (
+  const WheelSpin = (
     <div>
-      <img className="Spin-the-Wheel" src="./Images/MealWheel.png" />
+      <img className="Spin-the-Wheel" src="./Images/MealWheel2.png" />
     </div>
   );
 
-  https://api.spoonacular.com/recipes/complexSearch?cuisine={chosenCuisine}&includeIngredients={chosenProtein}&excludeIngredients={chosenIntolerence}
-
-
-
-
   return (
     <>
-                {MealWheelLogo} 
-                {chosenCuisine.cuisine}
-                {chosenCuisine.protein}
-                {chosenCuisine.intolerence}
+      
+        <Link className="navbar__link" to="/SpinResults">
+          {WheelSpin}
+        </Link>
+      
+
+      {chosenCuisine.cuisine}
+      {chosenCuisine.protein}
+      {chosenCuisine.intolerence}
     </>
   );
 };

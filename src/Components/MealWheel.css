@@ -16,7 +16,7 @@
 }
 
 .spinOptionButton {
-  background-color: darkgreen;
+  background-color:darkcyan;
   text-decoration: underline;
   flex-basis: 10%;
   padding: 10px 20px;
@@ -84,4 +84,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.resultPopUp {
+  flex-basis: auto;
+  position: relative;
+  align-content: center;
+  width: 800px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 100%;
+  background-image: url(/public/Images/resultpopup2.png);
+  background-repeat: no-repeat;
+}
+
+
+.resultBox {
+  flex-basis: auto;
+  position:absolute;
+  align-content: center;
+
 }

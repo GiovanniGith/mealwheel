@@ -5,12 +5,15 @@ import { CuisineChoice } from "./SpinTheWheel/FilteredCuisines";
 import { ProteinChoice } from "./SpinTheWheel/FilteredProteins"
 import { IntolerenceChoice } from "./SpinTheWheel/FilteredIntolerences";
 import { SpinTheWheel } from "./SpinTheWheel/SpinTheWheel";
+import { SpinResults } from "./SpinTheWheel/SpinResults";
+import { RecipeIngredients} from "./Recipes/Ingredients";
 import "./MealWheel.css"
 
 
 
 export const ApplicationViews = () => {
-  const [chosenCuisine, setChosenCuisine] = useState ({test:"test"})
+  const [chosenCuisine, setChosenCuisine] = useState ({test:"test"});
+  const [recipeId, setRecipeId] = useState ({test:"test2"})
   
 
 
@@ -35,15 +38,13 @@ export const ApplicationViews = () => {
           <SpinTheWheel chosenCuisine={chosenCuisine} />
         </Route> 
         <Route path="/SpinResults">
-          <SpinResults />
+          <SpinResults chosenCuisine={chosenCuisine} setRecipeId={setRecipeId} />
         </Route> 
-        {/* <Route path="/SpinResults">
-          <SpinResults/>
-        </Route>
+        
         <Route path="/RecipeIngredients">
-          <RecipeIngredients/>
+          <RecipeIngredients recipeId={recipeId} />
         </Route>
-        <Route path="/RecipeInstructions">
+        {/* <Route path="/RecipeInstructions">
           <RecipeInstructions/>
         </Route> */}
 
