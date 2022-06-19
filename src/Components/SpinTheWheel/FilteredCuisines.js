@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, Link } from "react-router-dom";
 
-export const CuisineChoice = ({setChosenCuisine}) => {
+export const CuisineChoice = ({ setChosenCuisine }) => {
   const [cuisine, setCuisine] = useState([]);
   const [limit, setLimit] = useState(5);
-  
 
   useEffect(() => {
     fetch("http://localhost:8088/cuisine")
@@ -24,12 +23,11 @@ export const CuisineChoice = ({setChosenCuisine}) => {
 
   const setCuisineChoice = (cuisineType) => {
     setChosenCuisine((prev) => {
-      let oldObj = {...prev} 
-      oldObj.cuisine = cuisineType
-      return oldObj
-      console.log(oldObj)
-    })
-
+      let oldObj = { ...prev };
+      oldObj.cuisine = cuisineType;
+      return oldObj;
+      console.log(oldObj);
+    });
   };
 
   return (
@@ -42,7 +40,7 @@ export const CuisineChoice = ({setChosenCuisine}) => {
             if (index <= limit) {
               return (
                 <button
-                  onClick={() =>setCuisineChoice(cuisine.type)}
+                  onClick={() => setCuisineChoice(cuisine.type)}
                   className="spinOptionButton"
                   key={`cuisine--${cuisine.id}`}
                 >

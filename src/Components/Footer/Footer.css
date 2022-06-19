@@ -1,7 +1,7 @@
 .navbar {
-    position: fixed;
-    bottom: 5%;
-    right: 0;
+    position: relative;
+    bottom: 40%;
+    
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -16,5 +16,6 @@
     list-style-type: none;
     padding: 20px;
     background-color:rgb(87, 120, 168);
+    border-radius: 8px;
 
 }

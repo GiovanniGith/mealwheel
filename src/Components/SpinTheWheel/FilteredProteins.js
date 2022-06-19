@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const ProteinChoice = ({setChosenProtein}) => {
+export const ProteinChoice = ({ setChosenProtein }) => {
   const [protein, setProtein] = useState([]);
 
   useEffect(() => {
@@ -12,15 +12,13 @@ export const ProteinChoice = ({setChosenProtein}) => {
       });
   }, []);
 
-
   const setProteinChoice = (proteinType) => {
     setChosenProtein((prev) => {
-      let oldObj = {...prev} 
-      oldObj.protein = proteinType
-      return oldObj
-      console.log(oldObj)
-    })
-
+      let oldObj = { ...prev };
+      oldObj.protein = proteinType;
+      return oldObj;
+      console.log(oldObj);
+    });
   };
   return (
     <>
@@ -30,7 +28,8 @@ export const ProteinChoice = ({setChosenProtein}) => {
         <div className="buttonOp">
           {protein.map((protein) => {
             return (
-              <button onClick={() => setProteinChoice(protein.type)}
+              <button
+                onClick={() => setProteinChoice(protein.type)}
                 className="spinOptionButton"
                 key={`protein--${protein.id}`}
               >

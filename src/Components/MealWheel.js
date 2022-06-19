@@ -8,8 +8,8 @@ import { FootNav } from "./Footer/FooterNavBar";
 
 export var MealWheelLogo = (
   <div >
-    <img className="MealWheelLogo" src="./Images/MealWheelLogo.jpg"/> 
-    <img className="App-logo" src="./Images/Wheel.jpg" />    
+    <img className="MealWheelLogo" src="./Images/MealWheelLogoFinished.jpg"/> 
+        
   </div>
 );
 
