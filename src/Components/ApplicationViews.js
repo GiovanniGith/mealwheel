@@ -14,6 +14,9 @@ export const ApplicationViews = () => {
   const [chosenCuisine, setChosenCuisine] = useState();
   const [recipeId, setRecipeId] = useState();
   const [recipeName, setRecipeName] = useState();
+  const [recipeImageUrl, setImageUrl] = useState();
+  const [favIngredients, setFavIngredients] = useState();
+  const [favInstructions, setFavInstructions] = useState();
 
   return (
     <>
@@ -38,14 +41,27 @@ export const ApplicationViews = () => {
             chosenCuisine={chosenCuisine}
             setRecipeId={setRecipeId}
             setRecipeName={setRecipeName}
+            setImageUrl={setImageUrl}
           />
         </Route>
 
         <Route path="/RecipeIngredients">
-          <RecipeIngredients recipeId={recipeId} recipeName={recipeName} />
+          <RecipeIngredients
+            recipeId={recipeId}
+            recipeName={recipeName}
+            setFavIngredients={setFavIngredients}
+            recipeImageUrl={recipeImageUrl}
+          />
         </Route>
         <Route path="/RecipeInstructions">
-          <RecipeInstructions recipeId={recipeId} recipeName={recipeName}  />
+          <RecipeInstructions
+            recipeId={recipeId}
+            recipeName={recipeName}
+            recipeImageUrl={recipeImageUrl}
+            favIngredients={favIngredients}
+            setFavInstructions={setFavInstructions}
+            favInstructions={favInstructions}
+          />
         </Route>
       </div>
     </>

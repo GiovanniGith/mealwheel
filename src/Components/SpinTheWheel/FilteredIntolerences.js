@@ -47,14 +47,17 @@ export const IntolerenceChoice = ({setChosenIntolerence}) => {
                 > <Link className="navbar__link" to="/SpinTheWheel">
                 {intolerence.type}
               </Link>
-                  
-                </button>
+                            
+              </button>
               );
             }
           })}
           <button className="seeAllButton" onClick={allIntolerences}>
             See All
           </button>
+          <button onClick={() => setIntolerenceChoice(intolerence.type === "None")}
+                  className="noIntButton">
+          <Link className="navbar__link" to="/SpinTheWheel" > None</Link>  </button>
         </div>
       </div>
     </>

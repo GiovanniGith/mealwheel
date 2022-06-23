@@ -1,20 +1,25 @@
-
-
-.content{
-  
- text-align: center;
-  
+.content{  
+ text-align: center;  
 }
 
 .buttonOp {
   display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
 }
 
 .spinOptionButton {
   background-color:darkcyan;
+  text-decoration: underline;
+  flex-basis: 10%;
+  padding: 10px 20px;
+  margin: .5%;
+  border-radius: 8px;
+}
+
+.noIntButton {
+  font-style: white;
+  background-color:rgb(87, 120, 168);
   text-decoration: underline;
   flex-basis: 10%;
   padding: 10px 20px;
@@ -33,7 +38,7 @@
 
 .views{
   width: 100%;
-  height: 80vh;
+  height: 90vh;
 }
 
 .MealWheelLogo {
@@ -50,8 +55,6 @@
 }
 
 .Spin-the-Wheel{
-
-
 }
 
 .Spin-the-Wheel-Motion {
@@ -62,10 +65,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .Spin-the-Wheel-Motion {
-    animation: App-logo-spin  5s linear ;
-    
-    
-    
+    animation: App-logo-spin  5s linear ;    
   }
 }
 
@@ -85,8 +85,8 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 80%; 
-  background-image: url(/public/Images/resultpopup2.png);
+  height: 90%; 
+  background-image: url(/public/Images/ResultPopUpBox.jpg);
   background-size: 80% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -94,22 +94,44 @@
 
 .resultBox img {
   width: 100%;
+  
 }
 .resultBox {
  
   width: 25%;
-  height: 20%;
+  height: 25%;
 }
 
 .resultsButton {
-  background-color: red;
+  background-color:blue;
   border-radius: 8px;
-  
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
   padding: 10px 20px;
 }
 
 .resultNav {
+  position: relative;
+  bottom: 10px;    
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;  
+}
+
+.recipeIngredientsStyling{
+  display: flex;
   flex-direction: row;
-margin-bottom: 20%;
-  justify-content: space-evenly;
+}
+
+.mainDiv {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.titleImage{
+  display: contents;
+  align-content: center;
+  width: 80%;
 }

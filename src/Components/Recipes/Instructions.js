@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../MealWheel.css";
 
-export const RecipeInstructions = ({ recipeId, recipeName }) => {
+export const RecipeInstructions = ({
+  recipeId,
+  recipeName,
+  recipeImageUrl,
+  favIngredients,
+  favInstructions,
+  setFavInstructions,
+}) => {
   const [instructions, setInstructions] = useState([]);
 
   useEffect(() => {
@@ -16,31 +23,69 @@ export const RecipeInstructions = ({ recipeId, recipeName }) => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((data) => {
-        setInstructions(data[0].steps);
-      });
+      .then(inspectResults);
   }, []);
 
-  {
+  const inspectResults = (data) => {
+    setInstructions(data[0].steps);
+    setFavInstructions(data[0].steps);
+  };
+
+  
+  const history = useHistory();
+
+
+  const addToFavorites = (event) => {
     
-  }
+    event.preventDefault();
+
+    const dataToApi = {
+      favoriteName: { recipeName },
+      favoriteImageUrl: { recipeImageUrl },
+      favoriteIngredients: { favIngredients },
+      favoriteInstructions: { favInstructions },
+    };
+
+    const fetchOption = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToApi),
+    };
+
+    return fetch("http://localhost:8088/favorites", fetchOption).then(() => {
+      history.push("/favorites");
+    });
+  };
+
+  const resultImage = (
+    <div className="content">
+      <img src={recipeImageUrl} />
+    </div>
+  );
 
   return (
     <>
-      <h1>{recipeName} Instructions!</h1>
-      <div>
-        {" "}
-        {instructions.map((instruction) => {
-          return (
-            <div key={`instruction--${instruction}`}>
-              <p>
-                {instruction.number}. {instruction.step}
-              </p>
-            </div>
-          );
-        })}
+      <div className="content">
+        <h1>{recipeName} Instructions!</h1>
+        {resultImage}
+        <div>
+          {" "}
+          {instructions.map((instruction) => {
+            return (
+              <div key={`instruction--${instruction}`}>
+                <p>
+                  {instruction.number}. {instruction.step}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        <button className="noIntButton" onClick={addToFavorites}>
+          <Link to="">Favorite!</Link>
+        </button>
       </div>
-      <button><Link to="">Favorite this Recipe!</Link></button>
     </>
   );
 };

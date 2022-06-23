@@ -19,10 +19,11 @@ export const App = () => (
       render={() => {
         if (localStorage.getItem("MealWheel_User")) {
           return (
-            <>
+            <><div className="mainDiv">
               {MealWheelLogo}
               <ApplicationViews />
               <FootNav />
+              </div>
             </>
           );
         } else {
