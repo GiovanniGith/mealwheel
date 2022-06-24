@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "../MealWheel.css";
 
 export const RecipeInstructions = ({
+  faveId,
   recipeId,
   recipeName,
   recipeImageUrl,
@@ -29,21 +30,23 @@ export const RecipeInstructions = ({
   const inspectResults = (data) => {
     setInstructions(data[0].steps);
     setFavInstructions(data[0].steps);
+    
   };
 
-  
   const history = useHistory();
 
-
   const addToFavorites = (event) => {
-    
     event.preventDefault();
 
+    
     const dataToApi = {
-      favoriteName: { recipeName },
-      favoriteImageUrl: { recipeImageUrl },
-      favoriteIngredients: { favIngredients },
-      favoriteInstructions: { favInstructions },
+      favId: faveId + 1,
+      userId: parseInt(localStorage.getItem("MealWheel_User")),
+      favRecipeId: recipeId,
+      favName: recipeName,
+      favImageUrl: recipeImageUrl,
+      favIngredients: favIngredients,
+      favInstructions: favInstructions,
     };
 
     const fetchOption = {
