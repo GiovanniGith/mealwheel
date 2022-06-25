@@ -10,6 +10,7 @@ export const SpinResults = ({ chosenCuisine, setRecipeId, setRecipeName, setImag
       <img className="resultPopUp" src="./Images/resultpopup2.png" />
     </div>
   );
+
   useEffect(() => {
     var requestOptions = {
       method: "GET",
@@ -25,16 +26,24 @@ export const SpinResults = ({ chosenCuisine, setRecipeId, setRecipeName, setImag
   }, []);
 
   const inspectResults = (data) => {
-    if (data.results.length === 0) {
-    } else {
-      setResult(data.results[0]);
-      setRecipeId(data.results[0].id);
-      setRecipeName(data.results[0].title);
-      setImageUrl(data.results[0].image)
+    if (data.results) {
+
+      console.log(data.results)
+
+      const fetchResult = data.results[Math.floor(Math.random() * Object.keys(data.results).length)]
+
+      console.log(fetchResult)
+
+      if(fetchResult){
+
+      setResult(fetchResult);
+      setRecipeId(fetchResult.id);
+      setRecipeName(fetchResult.title);
+      setImageUrl(fetchResult.image)}
     }
   };
 
-  if (Object.keys(result).length === 0) {
+  if (result && Object.keys(result).length === 0) {
     return <h1>This combination doesn't have a matching result.. yet. Please check back in for updated options!</h1>;
   } else {
     const resultImage = (

@@ -2,33 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../MealWheel.css";
 
-export const Favorites = ({setRecipeId, setFaveId}) => {
+export const Favorites = ({ setRecipeId, setFaveId }) => {
   const [favorite, setFavorite] = useState([]);
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
-    fetch(
-      "http://localhost:8088/favorites"
-    )
+    fetch("http://localhost:8088/favorites")
       .then((res) => res.json())
       .then(inspectResults);
   }, []);
 
   const inspectResults = (data) => {
     setFavorite(data);
-    setRecipeId(data[0].favRecipeId)
-    setFaveId(data.length)
-  }
-
-  const deleteFav = (id) => {
-    fetch(`http://localhost:8088/favorites/${id}`, {
-      method: "DELETE",
-    }).then(
-      history.push("")
-    );
+    setRecipeId(data.favRecipeId);
+    setFaveId(data.length);
   };
 
-  
+  // const deleteFav = (id) => {
+  //   fetch(`http://localhost:8088/favorites/{id}`, {
+  //     method: "DELETE",
+  //   }).then(
+  //     history.push("")
+  //   );
+  // };
 
   // const mappedFavorite = favorite.map()
 
@@ -37,35 +33,32 @@ export const Favorites = ({setRecipeId, setFaveId}) => {
       <div className="content">
         <h1>Your Favorite Cuisines!</h1>
 
-        <div className="buttonOp">
+        <div className="favoriteDiv" >
           {favorite.map((fav) => {
             const resultImage = (
               <div className="resultBox">
                 <img src={fav.favImageUrl} />
               </div>
-            )
-
-
-            return (
+            );
+        return (
               <>
-                <div className="content">
+                <div >
                   {fav.favName}
-                  {resultImage}                 
+                  {resultImage}
                   <button>
-                    <Link  to="/RecipeIngredients"> See Ingredients</Link>
+                    <Link to="/FavoriteIngredients"> See Ingredients</Link>
                   </button>
                   <button>
-                    <Link  to="/RecipeInstructions"> See Instructions</Link>
+                    <Link to="/RecipeInstructions"> See Instructions</Link>
                   </button>
-                  <button onClick={deleteFav(fav.favId)} >
+                  {/* <button onClick={deleteFav(fav.favId)} >
                     <Link  to="/favorites"> Delete Favorite</Link>
-                  </button>
+                  </button> */}
                 </div>
               </>
             );
           })}
         </div>
-        
       </div>
     </>
   );

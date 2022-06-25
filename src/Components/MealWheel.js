@@ -7,9 +7,8 @@ import "./MealWheel.css";
 import { FootNav } from "./Footer/FooterNavBar";
 
 export var MealWheelLogo = (
-  <div >
-    <img className="MealWheelLogo" src="./Images/MealWheelLogoFinished.jpg"/> 
-        
+  <div>
+    <img className="MealWheelLogo" src="./Images/MealWheelLogoFinished.jpg" />
   </div>
 );
 
@@ -19,11 +18,12 @@ export const App = () => (
       render={() => {
         if (localStorage.getItem("MealWheel_User")) {
           return (
-            <><div className="mainDiv">
-              {MealWheelLogo}
-              <ApplicationViews />
-              <FootNav />
+            <>
+              <div className="mainDiv">
+                {MealWheelLogo}
+                <ApplicationViews />                
               </div>
+              <FootNav />
             </>
           );
         } else {

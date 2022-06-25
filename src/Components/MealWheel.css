@@ -2,6 +2,17 @@
  text-align: center;  
 }
 
+.mainDiv {
+  
+  
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.navDiv {
+  margin-top: 10%;
+}
+
 .buttonOp {
   display: flex;
     flex-wrap: wrap;
@@ -37,8 +48,10 @@
 }
 
 .views{
-  width: 100%;
-  height: 90vh;
+  background-color: lightgray ;
+  width: 80%;
+  height:auto
+  
 }
 
 .MealWheelLogo {
@@ -125,13 +138,18 @@
   flex-direction: row;
 }
 
-.mainDiv {
-  padding-left: 8rem;
-  padding-right: 8rem;
-}
+
 
 .titleImage{
   display: contents;
   align-content: center;
   width: 80%;
+}
+
+.favoriteDiv{
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: content;
+  border-radius: 5ch;
+
 }

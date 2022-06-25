@@ -8,6 +8,7 @@ import { SpinTheWheel } from "./SpinTheWheel/SpinTheWheel";
 import { SpinResults } from "./SpinTheWheel/SpinResults";
 import { RecipeIngredients } from "./Recipes/Ingredients";
 import { RecipeInstructions } from "./Recipes/Instructions";
+import { FavoriteRecipeIngredients } from "./Favorites/FavoriteIngredients";
 import "./MealWheel.css";
 
 export const ApplicationViews = () => {
@@ -22,6 +23,12 @@ export const ApplicationViews = () => {
   return (
     <>
       <div className="views">
+        <Route path="/Favorites">
+          <Favorites setRecipeId={setRecipeId} setFaveId={setFaveId} />
+        </Route>
+        <Route path="/FavoriteIngredients">
+          <FavoriteRecipeIngredients />
+        </Route>
         <Route path="/Favorites">
           <Favorites setRecipeId={setRecipeId} setFaveId={setFaveId} />
         </Route>
